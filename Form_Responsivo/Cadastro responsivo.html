@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <title>Cadastro</title> 
+</head>
+
+<body>
+    <body>
+        <!--Cabeçalho do cadastro-->
+
+        <div class="container">
+            <header>Cadastro</header>
+
+        <!--Corpo do Formulário-->
+
+            <form action="#">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title"><i class="bi bi-person-fill"></i></i>Dados Pessoais</span>
+    
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Nome</label>
+                                <input id="Effect" type="text" placeholder="Nome" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Sobrenome</label>
+                                <input id="Effect2" type="text" placeholder="Sobrenome" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Email</label>
+                                <input id="Effect3" type="email" placeholder="Email" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Número de telefone</label>
+                                <input id="Effect4" type="tel" onkeyup="handlePhone(event)" placeholder="(00)00000-0000" required>
+                            </div>
+                            
+                            <div class="input-field">
+                                <label>Data de aniversário</label>
+                                <input id="Effect5" type="date" placeholder="Digite sua data de aniversário" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Gênero</label>
+                                <select id="Effect6"  required>
+                                    <option disabled selected>Selecione seu gênero</option>
+                                    <option>Masculino</option>
+                                    <option>Feminino</option>
+                                    <option>Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                  
+    
+                        <button class="nextBtn">
+                            <span class="btnText">Próximo</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                   
+                </div>
+    
+                <div class="form second">
+                    <div class="details address">
+                        <span class="title"><i class="bi bi-house-door-fill"></i>Dados do endereço</span>
+    
+                        <div class="fields">
+                            
+    
+                            <div class="input-field">
+                                <label>Nacionalidade</label>
+                                <input id="Effect7" type="text" placeholder="ex: brasileira" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Estado</label>
+                                <input id="Effect8"type="text" placeholder="Digite seu estado" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Distrito</label>
+                                <input id="Effect9"type="text" placeholder="Digite seu distrito" required>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="buttons">
+                            <div class="backBtn">
+                                <i class="uil uil-navigator"></i>
+                                <span class="btnText">Voltar</span>
+                            </div>
+                            
+                            <button class="sumbit">
+                                <span class="btnText">Enviar</span>
+                                <i class="uil uil-navigator"></i>
+                            </button>
+                        </div>
+                   
+                </div>
+            </form>
+        </div>
+        <!-- funcionalidade dos botões do cadastro -->
+
+        <script>
+        const form = document.querySelector("form"),
+        nextBtn = form.querySelector(".nextBtn"),
+        backBtn = form.querySelector(".backBtn"),
+        allInput = form.querySelectorAll(".first input");
+
+
+nextBtn.addEventListener("click", ()=> {
+    allInput.forEach(input => {
+        if(input.value != ""){ // se o input for diferente de vazio faça:
+            form.classList.add('secActive'); // aqui ele ativa
+        }else{
+            form.classList.remove('secActive'); // se não, o oposto acontece
+        }
+    })
+})
+
+backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+
+	$(function(){
+		$("#Effect").hover(
+			function(){
+				//Ao posicionar o cursor sobre a div
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+				//Ao remover o cursor da div
+				$(this).css('box-shadow', '0 0 0px 0px');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect2").hover(
+			function(){
+				
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+				
+				$(this).css('box-shadow', '0 0 0px 0px');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect3").hover(
+			function(){
+				
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+			
+				$(this).css('box-shadow', '0 0 0px 0px');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect4").hover(
+			function(){
+				
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+				
+				$(this).css('box-shadow', '0 0 0px 0px');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect5").hover(
+			function(){
+				
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+				
+				$(this).css('box-shadow', '0 0 0px 0px');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect6").hover(
+			function(){
+				
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+
+				$(this).css('box-shadow', '0 0 0px 0px');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect7").hover(
+			function(){
+
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+
+				$(this).css('box-shadow', '0 0 0 0');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect8").hover(
+			function(){
+
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+
+				$(this).css('box-shadow', '0 0 0 0');
+			}
+		);
+	});
+    $(function(){
+		$("#Effect9").hover(
+			function(){
+				
+				$(this).css('box-shadow', '0 0 5px 0px #265df2');
+			},
+			function(){
+				
+				$(this).css('box-shadow', '0 0 0 0');
+			}
+		);
+	});
+    const handlePhone = (event) => { // máscara pro telefone
+        let input = event.target
+        input.value = phoneMask(input.value)
+      }
+      
+      const phoneMask = (value) => {
+        if (!value) return ""
+        value = value.replace(/\D/g,'')
+        value = value.replace(/(\d{2})(\d)/,"($1) $2")
+        value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+        return value
+      }
+
+        </script>
+
+    </body>
+    </html>
